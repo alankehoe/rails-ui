@@ -1,0 +1,9 @@
+# The following settings will be used to configure the stack for
+api:
+  base_url: http://localhost:3000
+  oauth_token_url: '/oauth/token'
+  oauth_client_id: 'ab93e0c48937a8a11005ee0540f7b93c54187c2558d909aba7f4d125093ab1bc'
+  oauth_client_secret: '82058163677be19f97f55c5d2cea8f5ecc37f3a69ab2027dab67f0c04b5ad09c'
+  
+le:
+  token: '2c00074e-bb85-40e5-aef3-696deeff7619'
