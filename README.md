@@ -1,5 +1,8 @@
 =========
 
+[![Build Status](https://travis-ci.org/alankehoe/rails-ui.svg?branch=master)](https://travis-ci.org/alankehoe/rails-ui)
+[![Dependency Status](https://gemnasium.com/alankehoe/rails-ui.svg)](https://gemnasium.com/alankehoe/rails-ui)
+
 # Getting started
 
 ## 1. System setup
