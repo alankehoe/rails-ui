@@ -12,7 +12,7 @@
   function navbar(APP_CONSTANTS, Me, Session) {
     return {
       restrict: 'E',
-      templateUrl: '<%= asset_path('application/common/partials/navbar.directive.html') %>',
+      templateUrl: '/templates/common/partials/navbar.directive.html',
       link: function (scope, elem, attrs) {
         scope.app_name = APP_CONSTANTS.APP_NAME;
         Me.index().then(function (success) {
@@ -30,7 +30,7 @@
   function subNavbar($route) {
     return {
       restrict: 'E',
-      templateUrl: '<%= asset_path('application/common/partials/profile-navbar.directive.html') %>',
+      templateUrl: '/templates/common/partials/profile-navbar.directive.html',
       link: function (scope, elem, attrs) {
         scope.route = $route.current.$$route.name;
       }
@@ -59,7 +59,7 @@
   function footer($timeout, APP_CONSTANTS) {
     return {
       restrict: 'E',
-      templateUrl: '<%= asset_path('application/common/partials/footer.directive.html') %>',
+      templateUrl: '/templates/common/partials/footer.directive.html',
       link: function (scope, elem, attrs) {
         scope.app_version = APP_CONSTANTS.APP_VERSION;
         scope.app_name = APP_CONSTANTS.APP_NAME;
