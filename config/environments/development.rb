@@ -29,9 +29,4 @@ App::Application.configure do
 
   # pre-minification steps for Angular dependency injector.
   config.ng_annotate.process = true
-
-  # Compress JavaScripts and CSS.
-  config.assets.compress = true
-  config.assets.js_compressor = :yui
-  config.assets.css_compressor = :yui
 end
