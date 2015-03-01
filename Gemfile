@@ -23,7 +23,7 @@ end
 gem 'oauth2'
 
 # Bower
-gem 'bower-rails', '~> 0.8.3'
+gem 'bower-rails'
 
 # Asset preprocessing
 gem 'haml'
