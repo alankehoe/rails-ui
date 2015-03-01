@@ -1,0 +1,12 @@
+language: ruby
+
+rvm:
+  - 2.0.0-p481
+
+script:
+  - grunt jshint
+  - RAILS_ENV=test bundle exec rake spec:javascript
+
+before_script:
+  - npm install
+  - cp config/application.yml.example config/application.yml

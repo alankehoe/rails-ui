@@ -1,18 +1,16 @@
 class ApiProxyController < ApplicationController
-  include Application::Oauth
-  
   before_filter :check_session
 
   def proxy
-    response = access_token.send request_method.downcase.to_sym, request_path, params: request_params
-    self.response.headers = response.headers
-    render json: response.body, status: response.status
+    proxy_response = access_token.send request_method.downcase.to_sym,
+                                 request_path, 
+                                 params: request_params
+    response.headers = proxy_response.headers
+    render json: proxy_response.body, status: proxy_response.status
   rescue OAuth2::Error => error
-    response = error.response
-    self.response.headers = response.headers
-    render json: response.body, status: response.status
-  rescue Faraday::ConnectionFailed
-    render json: {error: 'service_unavailable'}, status: 502
+    proxy_response = error.response
+    response.headers = proxy_response.headers
+    render json: proxy_response.body, status: proxy_response.status
   end
 
   private

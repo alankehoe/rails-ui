@@ -1,6 +1,7 @@
 class SessionController < ApplicationController
   def login
-    access_token = client.password.get_token params[:username], params[:password]
+    access_token = client.password.get_token params[:username], 
+                                             params[:password]
     session[:oauth] = access_token.to_hash
     render json: { message: 'ok' }
   rescue OAuth2::Error

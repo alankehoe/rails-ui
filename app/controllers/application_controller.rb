@@ -3,8 +3,8 @@
 # controller layer
 class ApplicationController < ActionController::Base
   include Application::Oauth
-  
-  protect_from_forgery
+
+  protect_from_forgery with: :exception
 
   rescue_from ActionController::InvalidAuthenticityToken do
     render json: { :error => 'missing_csrf' }, status: :bad_request
