@@ -1,14 +1,13 @@
 'use strict';
 
 describe('Module: application.common', function () {
-
   beforeEach(function () {
     module('application');
     
-    inject(function (DSCacheFactory) {
+    inject(function (_$httpBackend_, DSCacheFactory) {
       var cache = DSCacheFactory.get('ApplicationCache');
       cache.disable();
-    })
+    });
   });
 
   describe('Directive: navbar', function () {
@@ -53,6 +52,8 @@ describe('Module: application.common', function () {
             "updated_at": "2014-11-27T09:29:37.810Z"
           }
       );
+      
+      $httpBackend.whenGET('/assets/application/common/partials/navbar.html').respond(200);
     });
 
     it('should render the template correctly', function () {

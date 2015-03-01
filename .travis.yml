@@ -3,6 +3,9 @@ language: ruby
 rvm:
   - 2.0.0-p481
 
+env:
+  - RAILS_ENV=test
+
 script:
   - grunt jshint
   - RAILS_ENV=test bundle exec rake spec:javascript
