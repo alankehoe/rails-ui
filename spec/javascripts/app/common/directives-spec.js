@@ -53,7 +53,7 @@ describe('Module: application.common', function () {
           }
       );
 
-      $httpBackend.expectGET('/assets/application/common/partials/navbar.html').respond(200);
+      $httpBackend.expectGET('/assets/application/common/partials/navbar.directive.html').respond(200);
     });
 
     it('should render the template correctly', function () {
