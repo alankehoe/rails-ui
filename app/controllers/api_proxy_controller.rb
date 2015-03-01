@@ -1,4 +1,6 @@
 class ApiProxyController < ApplicationController
+  include Application::Oauth
+  
   before_filter :check_session
 
   def proxy
@@ -14,16 +16,6 @@ class ApiProxyController < ApplicationController
   end
 
   private
-
-  def access_token
-    return false unless session[:oauth]
-    access_token = OAuth2::AccessToken.from_hash client, session[:oauth].dup
-    if access_token.expired?
-      access_token = OAuth2::AccessToken.from_hash(client, session[:oauth].dup).refresh!
-      session[:oauth] = access_token.to_hash
-    end
-    @access_token ||= access_token
-  end
 
   def check_session
     handle_missing_session unless access_token
