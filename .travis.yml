@@ -9,4 +9,5 @@ script:
 
 before_script:
   - npm install
+  - bundle exec rake bower:install:development
   - cp config/application.yml.example config/application.yml
