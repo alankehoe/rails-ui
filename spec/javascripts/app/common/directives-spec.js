@@ -52,8 +52,6 @@ describe('Module: application.common', function () {
             "updated_at": "2014-11-27T09:29:37.810Z"
           }
       );
-
-      $httpBackend.expectGET('/assets/application/common/partials/navbar.directive.html').respond(200);
     });
 
     it('should render the template correctly', function () {
